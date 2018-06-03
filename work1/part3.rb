@@ -27,7 +27,7 @@ end
 
 short_sum = short1**2 + short2**2
 big_q = big**2
-cond1 = big**2 == short_sum
+cond1 = big_q == short_sum
 cond2 = short1 == short2
 
 if big == short1 && cond2
