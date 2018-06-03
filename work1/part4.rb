@@ -11,10 +11,10 @@ c = gets.chomp.to_f
 
 # Вычисляем дискриминант
 d = b**2 - 4*a*c
-sqrt_d = Math.sqrt(d)
 
 # Вычисляем корни, выводим результат
 if d > 0
+  sqrt_d = Math.sqrt(d)
   puts "Корни уравнения x1 = #{(-b-sqrt_d)/(2*a)} и x1 = #{(-b+sqrt_d)/(2*a)}."
 elsif d == 0
   puts "Корни уравнения x1 = x1 = #{-b/(2*a)}."
