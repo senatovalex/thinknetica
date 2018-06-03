@@ -15,24 +15,28 @@ isosceles = "равнобедренный"
 
 # определяем бОльшую сторону
 if a1 > b1  && a1 > c1
-	big, short1, short2 = a1, b1, c1
+  big, short1, short2 = a1, b1, c1
 elsif b1 > a1  && b1 > c1
-	big, short1, short2 = b1, a1, c1
+  big, short1, short2 = b1, a1, c1
 elsif c1 > b1  && c1 > a1
-	big, short1, short2 = c1, a1, b1
+  big, short1, short2 = c1, a1, b1
 else big, short1, short2 = a1, b1, c1
 end
 			
 # определяем прямоугольность
 
+short_sum = short1**2 + short2**2
+big_q = big**2
+cond1 = big**2 == short_sum
+cond2 = short1 == short2
 
-if big == short1 && short1 == short2
+if big == short1 && cond2
   puts "Этот треугольник #{isosceles} и равносторонний, но #{not_rectangular}."
-elsif (big**2) == (short1**2 + short2**2) && short1 == short2
+elsif cond1 && cond2
   puts "Этот треугольник #{rectangular} и #{isosceles}."
-elsif (big**2) == (short1**2 + short2**2) && short1 != short2
+elsif cond1 && !cond2
   puts "Этот треугольник #{rectangular} и не #{isosceles}."
-elsif (big**2) != (short1**2 + short2**2) && short1 == short2
+elsif !cond1 && cond2
   puts "Этот треугольник #{not_rectangular}, но #{isosceles}."
 else
   puts "Треугольник #{not_rectangular}."
