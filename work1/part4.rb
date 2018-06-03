@@ -1,21 +1,23 @@
 # Вычисление корней квадратного уравнения 
 
 puts "Вычисление корней квадратного уравнения. Введите коэффициент а"
-a = Float(gets.chomp)
+a = gets.chomp.to_f
 
 puts "Введите коэффициент b"
-b = Float(gets.chomp)
+b = gets.chomp.to_f
 
 puts "Введите коэффициент c"
-c = Float(gets.chomp)
+c = gets.chomp.to_f
 
 # Вычисляем дискриминант
 d = b**2 - 4*a*c
+sqrt_d = Math.sqrt(d)
 
 # Вычисляем корни, выводим результат
 if d > 0
-	puts "Корни уравнения x1 = #{(-b-Math.sqrt(d))/(2*a)} и x1 = #{(-b+Math.sqrt(d))/(2*a)}."
+  puts "Корни уравнения x1 = #{(-b-sqrt_d)/(2*a)} и x1 = #{(-b+sqrt_d)/(2*a)}."
 elsif d == 0
-	puts "Корни уравнения x1 = x1 = #{-b/(2*a)}."
-else puts "Корней нет, дискриминант < 0."
+  puts "Корни уравнения x1 = x1 = #{-b/(2*a)}."
+else 
+  puts "Корней нет, дискриминант < 0."
 end

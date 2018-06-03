@@ -3,9 +3,9 @@ name = gets.chomp
 name.upcase!
 
 puts "Какой у тебя рост в сантиметрах?"
-h1 = gets.chomp
+h1 = gets.chomp.to_i
 
-w1 = h1.to_i - 110
+w1 = h1 - 110
 
 if w1 < 0
 	puts "Ваш вес уже оптимальный!"
